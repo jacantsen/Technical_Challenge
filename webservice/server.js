@@ -28,6 +28,13 @@ app.get('/movies', async (req, res)=>{
       };
       try {
         const response = await axios.request(options);
+        //only show 10
+        const movies = response.data.results.slice(0, 10).map(movie => ({
+            movie_id: movie.id,
+            title: movie.title,
+            poster_image_url: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+            popularity_summary: `${movie.popularity} out of ${movie.vote_count}`
+          }));
         res.status(200).json(response.data.results);
       } catch (error) {
        console.log(error)
