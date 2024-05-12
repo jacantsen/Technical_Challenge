@@ -2,6 +2,8 @@
 
 This is a simple movie search application that fetches movie data from the TMDB (The Movie Database) API and displays the matching movie titles along with their details.
 
+Both the frontend and backend use a .env file for environment variables. Please see the .env.example files for reference.
+
 ## Frontend
 
 ### Installation
