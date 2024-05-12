@@ -6,10 +6,8 @@ const domain = process.env.API_DOMAIN
 
 export default defineEventHandler(async (event) => {
   const title = event.context.params.title
-  console.log(title)
 
   const url = `${domain}/movies?title=${title}`;
   const {data} = await axios.get(url);
   return data
-  // console.log(response.data);
 });

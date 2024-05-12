@@ -14,25 +14,10 @@
         </div>
       </div>
     </div>
-    <!-- <div>
-    <h2>Search Results</h2>
-    <div v-if="movies.length === 0">
-      No movies found.
-    </div>
-    <div v-else>
-      <div v-for="movie in movies" :key="movie.id" class="movie">
-        <h3>{{ movie.title }}</h3>
-        <p>{{ movie.overview }}</p>
-        <img :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" :alt="movie.title">
-      </div>
-    </div>
-  </div> -->
   </template>
   
   <script setup lang="ts">
 const movies = ref<any[]>([]);
-  // Define variables and functions directly
-//   let movies: any[] = [];
   let searchQuery: string = '';
 
   async function search() {
