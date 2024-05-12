@@ -20,7 +20,7 @@ app.get('/movies', async (req, res)=>{
     const title = req.query.title;
     const options = {
         method: 'GET',
-        url: `${domain}/search/movie?query=${title}&api_key=${api_key}&&include_adult=false&language=en-US&page=1`,
+        url: `${domain}/search/movie?query=${title}&api_key=${api_key}&&include_adult=false&language=en-US&region=US&page=1`,
         headers: {
           accept: 'application/json',
           Authorization: `Bearer ${token}`
