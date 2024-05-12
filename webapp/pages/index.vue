@@ -8,9 +8,9 @@
       <div class="movie-container">
         <div v-for="(movie, index) in movies" :key="index" class="movie">
           <h2>{{ movie.title }}</h2>
-          <img v-if="movie.poster_path" :src="'https://image.tmdb.org/t/p/w500' + movie.poster_path" :alt="movie.title">
+          <img v-if="movie.poster_image_url" :src="'https://image.tmdb.org/t/p/w500' + movie.poster_image_url" :alt="movie.title">
             <span v-else>No poster available</span>
-          <p>Popularity: {{ movie.popularity }}</p>
+          <p>Popularity: {{ movie.popularity_summary }}</p>
         </div>
       </div>
     </div>

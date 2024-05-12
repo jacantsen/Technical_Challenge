@@ -32,10 +32,11 @@ app.get('/movies', async (req, res)=>{
         const movies = response.data.results.slice(0, 10).map(movie => ({
             movie_id: movie.id,
             title: movie.title,
-            poster_image_url: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+            poster_image_url: `https://image.tmdb.org/t/p/w500${movie.poster_image_url}`,
             popularity_summary: `${movie.popularity} out of ${movie.vote_count}`
           }));
-        res.status(200).json(response.data.results);
+
+        res.status(200).json(movies);
       } catch (error) {
        console.log(error)
        res.status(500).send("Error fetching movies") 
